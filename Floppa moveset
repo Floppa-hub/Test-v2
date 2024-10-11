@@ -8,7 +8,7 @@ local dropdownContainer = unnamedIcon:WaitForChild("DropdownContainer")
 local dropdownFrame = dropdownContainer:WaitForChild("DropdownFrame")
 
 local charFrame = Instance.new("Frame")
-charFrame.Name = "Char"
+charFrame.Name = "Floppa"
 charFrame.Parent = dropdownFrame
 charFrame.BackgroundTransparency = 1
 charFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)
@@ -24,7 +24,7 @@ iconButton.Parent = charFrame
 iconButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 iconButton.BackgroundTransparency = 0.5
 iconButton.BorderSizePixel = 0
-iconButton.Text = ""
+iconButton.Text = "Floppa"
 iconButton.TextScaled = false
 iconButton.TextSize = 8
 iconButton.TextTransparency = 1
@@ -56,7 +56,7 @@ iconImage.SliceScale = 1
 iconImage.ZIndex = 11
 
 local iconLabel = Instance.new("TextLabel")
-iconLabel.Name = "IconLabel"
+iconLabel.Name = "Floppa"
 iconLabel.Parent = iconButton
 iconLabel.AnchorPoint = Vector2.new(0, 0.5)
 iconLabel.BackgroundTransparency = 1

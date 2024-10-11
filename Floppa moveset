@@ -64,7 +64,7 @@ iconLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
 iconLabel.BorderSizePixel = 1
 iconLabel.Font = Enum.Font.GothamMedium
 iconLabel.LayoutOrder = 0
-iconLabel.Text = "Char Name"
+iconLabel.Text = "Floppa"
 iconLabel.TextColor3 = Color3.fromRGB(255, 216, 19)
 iconLabel.TextSize = 14
 iconLabel.TextScaled = false
@@ -81,7 +81,7 @@ local function onErrorNotification()
     game.StarterGui:SetCore("SendNotification", {
         Title = "NOTIFICATION";
         Text = "YOU'RE ALREADY PLAYING AS THIS CHARACTER.";
-        Icon = "";
+        Icon = "rbxassetid://11202163302";
         Duration = 5;
     })
 end

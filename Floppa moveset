@@ -85,7 +85,7 @@ for _, child in ipairs(fx1:GetChildren()) do
 end
 
 local fx2 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmBurst.a:Clone()
-fx2.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+fx2.Parent = game.Players.LocalPlayer.Character["Right Arm"]
 for _, child in ipairs(fx2:GetChildren()) do
     if child:IsA("ParticleEmitter") then
         child.Color = aqua -- Change particle color to aqua
@@ -94,7 +94,7 @@ for _, child in ipairs(fx2:GetChildren()) do
 end
 
 local fx3 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmFX:Clone()
-fx3.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+fx3.Parent = game.Players.LocalPlayer.Character["Right Arm"]
 for _, child in ipairs(fx3:GetChildren()) do
     if child:IsA("ParticleEmitter") then
         child.Color = aqua -- Change particle color to aqua
@@ -115,7 +115,7 @@ for _, child in ipairs(fx4:GetChildren()) do
 end
 
 local fx5 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmBurst.Attachment:Clone()
-fx5.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+fx5.Parent = game.Players.LocalPlayer.Character["Right Arm"]
 for _, child in ipairs(fx5:GetChildren()) do
     if child:IsA("ParticleEmitter") then
         child.Color = aqua -- Change particle color to aqua
@@ -124,7 +124,7 @@ for _, child in ipairs(fx5:GetChildren()) do
 end
 
 local fx6 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmBurst.a:Clone()
-fx6.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+fx6.Parent = game.Players.LocalPlayer.Character["Right Arm"]
 for _, child in ipairs(fx6:GetChildren()) do
     if child:IsA("ParticleEmitter") then
         child.Color = aqua -- Change particle color to aqua
@@ -133,7 +133,7 @@ for _, child in ipairs(fx6:GetChildren()) do
 end
 
 local fx7 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmFX:Clone()
-fx7.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+fx7.Parent = game.Players.LocalPlayer.Character["Right Arm"]
 for _, child in ipairs(fx7:GetChildren()) do
     if child:IsA("ParticleEmitter") then
         child.Color = aqua -- Change particle color to aqua

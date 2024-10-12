@@ -797,7 +797,7 @@ end
 
 local AnimAnim = Instance.new("Animation")
 
-AnimAnim.AnimationId = "rbxassetid://12447247483"
+AnimAnim.AnimationId = "rbxassetid://12684185971"
 
 local Anim = Humanoid:LoadAnimation(AnimAnim)
 
@@ -853,9 +853,9 @@ local animationIdsToStop = {
 
 local replacementAnimations = {
 
-    ["16515503507"] = "rbxassetid://17889458563", --punch1
+    ["13491635433"] = "rbxassetid://17889458563", --punch1
 
-    ["16515520431"] = "rbxassetid://17889461810", --punch2
+    [""] = "rbxassetid://17889461810", --punch2
 
     ["16515448089"] = "rbxassetid://17889471098", --punch3
 

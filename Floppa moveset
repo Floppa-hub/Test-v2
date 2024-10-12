@@ -517,6 +517,7 @@ Anim.TimePosition = startTime
 
 Anim:AdjustSpeed(0.9)
 
+
 local rs = game:GetService("ReplicatedStorage")
 local ws = game:GetService("Workspace")
 local p = game.Players.LocalPlayer

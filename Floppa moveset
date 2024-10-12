@@ -853,13 +853,13 @@ local animationIdsToStop = {
 
 local replacementAnimations = {
 
-    ["13491635433"] = "rbxassetid://17889458563", --punch1
+    ["13491635433"] = "rbxassetid://16515503507", --punch1
 
-    [""] = "rbxassetid://17889461810", --punch2
+    ["13296577783"] = "rbxassetid://16515520431", --punch2
 
-    ["16515448089"] = "rbxassetid://17889471098", --punch3
+    ["13295919399"] = "rbxassetid://16515448089", --punch3
 
-    ["16552234590"] = "rbxassetid://17889290569", --punch4
+    ["13295936866"] = "rbxassetid://16552234590", --punch4
 
     ["17859015788"] = "rbxassetid://12684185971", --punch idk
 

@@ -1131,3 +1131,11 @@ if player.Character then
         scriptHasRun.Value = false
     end
 end
+game:GetService("StarterGui"):SetCore("SendNotification",{
+Title = "Power surges within you.",
+Text = "Go to movesets to see the full potential.", 
+
+Button1 = "Yes",
+Button2 = "Idc stfu",
+Duration = 30 
+})

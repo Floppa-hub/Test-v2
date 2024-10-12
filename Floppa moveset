@@ -518,6 +518,39 @@ Anim:AdjustSpeed(0.9)
 
 delay(1.8, function()
 
+local rs = game:GetService("ReplicatedStorage")
+local ws = game:GetService("Workspace")
+local p = game.Players.LocalPlayer
+local char = p.Character
+local hrp = char and char:FindFirstChild("HumanoidRootPart")
+local cam = game.Workspace.CurrentCamera
+
+if hrp and cam then
+    local spinbeam = rs:FindFirstChild("Resources") and rs.Resources:FindFirstChild("KJEffects") and rs.Resources.KJEffects:FindFirstChild("spinbeam")
+    if spinbeam then
+        local c = spinbeam:Clone()
+
+        -- Position the clone where the player is looking
+        c.CFrame = CFrame.new(hrp.Position + cam.CFrame.LookVector * 5)  -- Adjust the multiplier for distance
+
+        local beam2 = c:FindFirstChild("beam2")
+        if beam2 then
+            local beam = beam2:FindFirstChild("Beam")
+            if beam then
+                beam.Enabled = true
+            end
+        end
+
+        local t = ws:FindFirstChild("Thrown") or Instance.new("Folder", ws)
+        t.Name = "Thrown"
+        c.Parent = t
+
+        -- Destroy the cloned object after 1 second
+        wait(3)
+        c:Destroy()
+    end
+end
+
     Anim:Stop()
 
 end)

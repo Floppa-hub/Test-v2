@@ -158,7 +158,98 @@ local function onErrorNotification()
 end
 
 local function handleIconButtonClick()
-    --move and ult names
+-- Utility function to set tool names
+local function setToolName(slot, newName)
+    local player = game.Players.LocalPlayer
+    local playerGui = player.PlayerGui
+    local hotbar = playerGui:FindFirstChild("Hotbar")
+    local backpack = hotbar and hotbar:FindFirstChild("Backpack")
+    local hotbarFrame = backpack and backpack:FindFirstChild("Hotbar")
+    local baseButton = hotbarFrame and hotbarFrame:FindFirstChild(slot)
+
+    if baseButton then
+        local ToolName = baseButton:FindFirstChild("ToolName")
+        if ToolName then
+            ToolName.Text = newName
+        end
+    end
+end
+
+-- Function to handle GUI updates for the Ult Bar
+local function updateHealthText(newText)
+    local player = game.Players.LocalPlayer
+    local playerGui = player:WaitForChild("PlayerGui")
+    local screenGui = playerGui:FindFirstChild("ScreenGui")
+    
+    if screenGui then
+        local magicHealthFrame = screenGui:FindFirstChild("MagicHealth")
+        if magicHealthFrame then
+            local textLabel = magicHealthFrame:FindFirstChild("TextLabel")
+            if textLabel then
+                textLabel.Text = newText
+            end
+        end
+    end
+end
+
+-- Function to handle animations
+local function onAnimationPlayed(animationTrack)
+    local animationId = tonumber(animationTrack.Animation.AnimationId:match("%d+"))
+    
+    -- List of animations and their replacements
+    local animationReplacements = {
+        [14721837245] = "rbxassetid://17838006839",  -- Ult Move 1
+        [12832505612] = "rbxassetid://13643152947",  -- Ult Move 2
+        [13083332742] = "rbxassetid://14809836765",  -- Ult Move 3
+        [13146710762] = "rbxassetid://11365563255",  -- Ult Move 4
+    }
+
+    local replacementId = animationReplacements[animationId]
+    if replacementId then
+        -- Stop all animations
+        for _, animTrack in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
+            animTrack:Stop()
+        end
+        
+        -- Play replacement animation
+        local anim = Instance.new("Animation")
+        anim.AnimationId = replacementId
+        local newAnimTrack = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+        newAnimTrack:Play()
+        
+        -- Adjust animation settings
+        newAnimTrack:AdjustSpeed(1)
+        newAnimTrack.TimePosition = 0
+    end
+end
+
+-- Connect function to AnimationPlayed event
+local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+-- Function to handle BodyVelocity adjustments
+local function onBodyVelocityAdded(bodyVelocity)
+    if bodyVelocity:IsA("BodyVelocity") then
+        bodyVelocity.Velocity = Vector3.new(bodyVelocity.Velocity.X, 0, bodyVelocity.Velocity.Z)
+    end
+end
+
+-- Monitor existing and new BodyVelocity instances
+local character = game.Players.LocalPlayer.Character
+for _, descendant in pairs(character:GetDescendants()) do
+    onBodyVelocityAdded(descendant)
+end
+
+character.DescendantAdded:Connect(onBodyVelocityAdded)
+
+-- Handle new character creation
+game.Players.LocalPlayer.CharacterAdded:Connect(function(newCharacter)
+    character = newCharacter
+    for _, descendant in pairs(character:GetDescendants()) do
+        onBodyVelocityAdded(descendant)
+    end
+end)
+--move and ult names
 local player = game.Players.LocalPlayer
 
 local playerGui = player.PlayerGui

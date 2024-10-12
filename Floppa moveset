@@ -158,6 +158,7 @@ for _, child in ipairs(fx7:GetChildren()) do
         child:Emit(1) -- Emit 1 particle
     end
 end
+
 -- Utility function to set tool names
 local function setToolName(slot, newName)
     local player = game.Players.LocalPlayer

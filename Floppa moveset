@@ -1,12 +1,3 @@
-local function Notification()
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "Power surges within you.";
-        Text = "Look in movesets and make sure u have genos";
-        Icon = "rbxassetid://11202163302";
-        Duration = 5;
-    })
-end()
-
 local player = game.Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 

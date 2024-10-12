@@ -1,19 +1,82 @@
-local function onErrorNotification()
+local function Notification()
     game.StarterGui:SetCore("SendNotification", {
-        Title = "NOTIFICATION";
-        Text = "YOU'RE ALREADY PLAYING AS THIS CHARACTER.";
+        Title = "Power surges within you.";
+        Text = "Look in movesets and make sure u have genos";
         Icon = "rbxassetid://11202163302";
         Duration = 5;
     })
 end
 
-local function onErrorNotification()
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "NOTIFICATION";
-        Text = "YOU'RE ALREADY PLAYING AS THIS CHARACTER.";
-        Icon = "rbxassetid://11202163302";
-        Duration = 5;
-    })
+-- Aqua color sequence (cyan and light blue)
+local aqua = ColorSequence.new{
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 255)), -- cyan
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(127, 255, 212)) -- light aqua
+}
+
+local fx1 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmBurst.Attachment:Clone()
+fx1.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+for _, child in ipairs(fx1:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child.Color = aqua -- Change particle color to aqua
+        child:Emit(20) -- Emit 20 particles
+    end
+end
+
+local fx2 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmBurst.a:Clone()
+fx2.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+for _, child in ipairs(fx2:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child.Color = aqua -- Change particle color to aqua
+        child:Emit(20) -- Emit 20 particles
+    end
+end
+
+local fx3 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmFX:Clone()
+fx3.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+for _, child in ipairs(fx3:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child.Color = aqua -- Change particle color to aqua
+        child:Emit(1) -- Emit 1 particle
+    end
+end
+
+wait(2.1)
+fx3:Destroy()
+
+local fx4 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].EyeEmit:Clone()
+fx4.Parent = game.Players.LocalPlayer.Character["Head"]
+for _, child in ipairs(fx4:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child.Color = aqua -- Change particle color to aqua
+        child:Emit(20) -- Emit 20 particles
+    end
+end
+
+local fx5 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmBurst.Attachment:Clone()
+fx5.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+for _, child in ipairs(fx5:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child.Color = aqua -- Change particle color to aqua
+        child:Emit(20) -- Emit 20 particles
+    end
+end
+
+local fx6 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmBurst.a:Clone()
+fx6.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+for _, child in ipairs(fx6:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child.Color = aqua-- Change particle color to aqua
+        child:Emit(20) -- Emit 20 particles
+    end
+end
+
+local fx7 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmFX:Clone()
+fx7.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+for _, child in ipairs(fx7:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child.Color = red -- Change particle color to aqua
+        child:Emit(1) -- Emit 1 particle
+    end
 end
 
 local player = game.Players.LocalPlayer
